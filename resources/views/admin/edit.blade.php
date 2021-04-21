@@ -35,7 +35,7 @@
     </h3>
 
     <div style="width: 88%; margin:auto;">
-        <form name="myForm">
+        <form name="myForm" id="addForm">
             @csrf
             <input type="hidden" name="id" value="{{ $employee->id }}">
             <div class="flex flex-col md:w-1/2">
@@ -164,7 +164,7 @@
             $(e).prop('disabled', true);
             $.ajax({
                 type: 'POST',
-                url: 'update',
+                url: '/admin/update',
                 data: {
                     salary: salary,
                     joining: joining,

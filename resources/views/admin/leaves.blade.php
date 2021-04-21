@@ -7,7 +7,7 @@
 
 
         <h1 class="text-4xl text-gray-700 font-bold pt-2 mt-4 ml-2 mb-2">
-            <span class="fas fa-users"></span> Employees List
+            <span class="fas fa-users"></span> Leaves Record
         </h1>
 
         {{-- code for success message --}}
@@ -62,6 +62,9 @@
                         Employee ID</th>
                     <th
                         class="px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        Days</th>
+                    <th
+                        class="px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Leave From</th>
                     <th
                         class="px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
@@ -86,6 +89,8 @@
                         </td>
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
                             {{ $employee->employee_id }}</td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+                            {{ $employee->days }}</td>
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
                             {{ $employee->leave_from }}</td>
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
@@ -117,12 +122,8 @@
                                 <ul class="leading-7 dropdown-menu absolute hidden bg-gray-200 rounded">
 
                                     <li class=""><a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                            href="{{ '/admin/edit/' . $employee['id'] }}">
+                                            href="{{ '/admin/edit-leave/' . $employee['id'] }}">
                                             Edit</a>
-                                    </li>
-                                    <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                            href="{{ '/admin/leave/' . $employee['id'] }}">
-                                            Leave</a>
                                     </li>
                                     <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
                                             href="{{ '/admin/delete-leave/' . $employee['id'] }}">

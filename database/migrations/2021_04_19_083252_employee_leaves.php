@@ -17,8 +17,8 @@ class EmployeeLeaves extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id')->nullable();
             $table->float('days');
-            $table->datetime('leave_from');
-            $table->datetime('leave_to');
+            $table->date('leave_from');
+            $table->date('leave_to');
             $table->timestamps();
             $table->datetime('has_approved')->nullable();
 

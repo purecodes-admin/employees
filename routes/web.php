@@ -42,6 +42,8 @@ Route::group(['prefix' => 'admin'], function()
     Route::post("leave",[LeaveController::class,'store']);
     Route::get("leaves",[LeaveController::class,'index']);
     Route::get("delete-leave/{leave}",[LeaveController::class,'destroy']);
+    Route::get("edit-leave/{leave}",[LeaveController::class,'edit']);
+    Route::post("update-leave",[LeaveController::class,'update']);
 
 
 }); 

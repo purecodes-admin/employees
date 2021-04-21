@@ -40,8 +40,8 @@
 
 
 
-        {{-- <div class="flex justify-start md:justify-end">
-            <a href="/items/add">
+        <div class="flex justify-start md:justify-end">
+            <a href="/admin/add">
 
                 <button class="mt-2 mr-2 bg-blue-700 hover:bg-blue-900 text-white font-bold  px-1 rounded">New <i
                         class="fas fa-plus"></i></button>
@@ -50,7 +50,7 @@
                 <input type="search" placeholder="Search.." name="search" class="rounded border-none bg-gray-100 mr-10"
                     value="{{ request('search') }}">
             </form>
-        </div> --}}
+        </div>
         <table class="min-w-full table-fixed">
             <thead>
                 <tr>

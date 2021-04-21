@@ -39,15 +39,32 @@ class LeaveController extends Controller
         {
             // throw new \Exception('item not Deleted');
         $leave->delete();
-        Session::flash('message', 'Leave Record Deleted Successfully!');  
+        Session::flash('message', 'Record Deleted Successfully!');  
         return redirect('admin/leaves');
     }
     catch(exception $e){
 
-        Session::flash('error', 'Leave Record Not Deleted!'); 
+        Session::flash('error', 'Record Not Deleted!'); 
         return redirect('admin/leaves');
 
     }
     
     }
+
+    public function edit(Leave $leave)
+    {
+        
+        return view('admin.edit_leave',['leave'=>$leave]);
+    }
+
+    public function update(Request $request)
+    {
+        $leave=Leave::find($request->id);
+    	$leave->days=$request->days;
+    	$leave->leave_from=$request->leave_from;
+    	$leave->leave_to=$request->leave_to;
+
+        $leave->save();
+    }
+
 }
