@@ -1,4 +1,4 @@
-@extends('layout/admin-master')
+@extends('layout/master')
 @section('address', 'Add Distributor')
 @section('content')
 

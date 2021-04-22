@@ -26,9 +26,11 @@ class LeaveController extends Controller
     public function store(Request $request)
     {
         $leave= new Leave;
+        $leave->employee_id=$request->user()->id;
     	$leave->days=$request->days;
     	$leave->leave_from=$request->leave_from;
     	$leave->leave_to=$request->leave_to;
+        $leave->has_approved=now();
 
         $leave->save();
     }

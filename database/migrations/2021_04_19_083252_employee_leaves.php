@@ -22,7 +22,7 @@ class EmployeeLeaves extends Migration
             $table->timestamps();
             $table->datetime('has_approved')->nullable();
 
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

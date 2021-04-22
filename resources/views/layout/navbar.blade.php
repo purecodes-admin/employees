@@ -65,14 +65,10 @@
 
             <div class="hidden md:block mobile-menu mr-16">
                 <div :class="open ? 'block' : 'hidden'" class="flex flex-col text-left md:block md:text-right md:mt-0">
-                    <a href="/items/home" class=" menu mt-3 md:mx-3  text-gray-200">Home
+                    <a href="/dashboard" class=" menu mt-3 md:mx-3  text-gray-200">Home
 
                     </a>
-                    <a href="/customers" class=" menu mt-3 md:mx-3   text-gray-200">Customers</a>
-                    <a href="/items" class="menu mt-3 md:mx-3   text-gray-200">Items</a>
-                    <a href="/inventories" class=" menu mt-3 md:mx-3  text-gray-200">Inventory</a>
-                    <a href="/users/my-invoices" class=" menu mt-3 md:mx-3  text-gray-200">Invoices</a>
-                    <a href="/users/Userbilling" class=" menu mt-3 md:mx-3  text-gray-200">Billings</a>
+                    <a href="/admin/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
 
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
 
