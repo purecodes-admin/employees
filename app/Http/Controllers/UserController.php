@@ -61,6 +61,6 @@ class UserController extends Controller
                         $user->image='';
                     }
             $user->save();
-            return redirect('users')->with('Employee Added Successfully');
+            return redirect('admin')->with('Employee Added Successfully');
 }
 }

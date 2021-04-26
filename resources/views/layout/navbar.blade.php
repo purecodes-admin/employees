@@ -68,7 +68,7 @@
                     <a href="/dashboard" class=" menu mt-3 md:mx-3  text-gray-200">Home
 
                     </a>
-                    <a href="/admin/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
+                    <a href="/employees/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
 
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
 

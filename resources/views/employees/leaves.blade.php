@@ -38,22 +38,15 @@
             </div>
         @endif
 
-        {{-- code for flash messages --}}
-        @if (Session::has('message'))
-            <p class="text-center text-red-600 font-bold">{{ Session::get('message') }}</p>
-        @endif
-        @if (Session::has('approve'))
-            <p class="text-center text-green-700 font-bold">{{ Session::get('payment') }}</p>
-        @endif
 
 
         <div class="flex justify-start md:justify-end">
-            <a href="/admin/leave">
+            <a href="/employees/leave">
 
                 <button class="mt-2 mr-2 bg-blue-700 hover:bg-blue-900 text-white font-bold  px-1 rounded">New <i
                         class="fas fa-plus"></i></button>
             </a>
-            <form action="/admin/leaves">
+            <form action="/employees/leaves">
                 <input type="search" placeholder="Search.." name="search" class="rounded border-none bg-gray-100 mr-10"
                     value="{{ request('search') }}">
             </form>
@@ -135,19 +128,12 @@
 
                                 <ul class="leading-7 dropdown-menu absolute hidden bg-gray-200 rounded">
 
-                                    <li class="">
-                                        @if ($employee->status === 'pending')
-                                            <a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                                href="{{ '/admin/approve/' . $employee['id'] }}">
-                                                Approve</a>
-                                        @endif
-                                    </li>
                                     <li class=""><a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                            href="{{ '/admin/edit-leave/' . $employee['id'] }}">
+                                            href="{{ '/employees/edit-leave/' . $employee['id'] }}">
                                             Edit</a>
                                     </li>
                                     <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                            href="{{ '/admin/delete-leave/' . $employee['id'] }}">
+                                            href="{{ '/employees/delete-leave/' . $employee['id'] }}">
                                             Delete</a>
                                     </li>
 

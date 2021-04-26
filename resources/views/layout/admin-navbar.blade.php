@@ -67,6 +67,7 @@
                     class="flex flex-col text-left md:block md:text-right mt-3 md:mt-0">
                     <a href="/admin" class="menu mt-3 md:mx-3   text-gray-200">Employees</a>
                     <a href="/admin/joinings" class="menu mt-3 md:mx-3   text-gray-200">Joinings</a>
+                    <a href="/admin/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
                     {{-- <a href="/users/logout" class="menu mt-3 md:mx-3   text-gray-200">Logout</a> --}}
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
                         {{-- @if (Auth::user()->image == '')

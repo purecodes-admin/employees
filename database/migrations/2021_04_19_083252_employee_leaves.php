@@ -19,6 +19,7 @@ class EmployeeLeaves extends Migration
             $table->float('days');
             $table->date('leave_from');
             $table->date('leave_to');
+            $table->string('status');
             $table->timestamps();
             $table->datetime('has_approved')->nullable();
 

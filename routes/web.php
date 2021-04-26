@@ -39,15 +39,23 @@ Route::group(['prefix' => 'admin'], function()
     Route::get("edit/{employee}",[EmployeeController::class,'edit']);
     Route::post("update",[EmployeeController::class,'update']);
     Route::get("delete/{employee}",[EmployeeController::class,'destroy']);
-    Route::get("leave",[LeaveController::class,'create']);
-    Route::post("leave",[LeaveController::class,'store']);
     Route::get("leaves",[LeaveController::class,'index']);
-    Route::get("delete-leave/{leave}",[LeaveController::class,'destroy']);
-    Route::get("edit-leave/{leave}",[LeaveController::class,'edit']);
-    Route::post("update-leave",[LeaveController::class,'update']);
     Route::get("register",[UserController::class,'create']);
     Route::post("register",[UserController::class,'store']);
     Route::get("/",[UserController::class,'index']);
+    Route::get("approve/{leave}",[LeaveController::class,'approve']);
 
+
+}); 
+
+
+Route::group(['prefix' => 'employees'], function() 
+{ 
+    Route::get("leaves",[LeaveController::class,'UserLeaves']);
+    Route::get("leave",[LeaveController::class,'create']);
+    Route::post("leave",[LeaveController::class,'store']);
+    Route::get("delete-leave/{leave}",[LeaveController::class,'destroy']);
+    Route::get("edit-leave/{leave}",[LeaveController::class,'edit']);
+    Route::post("update-leave",[LeaveController::class,'update']);
 
 }); 

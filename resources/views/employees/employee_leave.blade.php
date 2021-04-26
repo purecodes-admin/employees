@@ -4,7 +4,7 @@
 
     <h3 style="width: 88%; margin:auto;" class="p-5 font-semibold text-lg underline text-blue-700     hover:text-blue-900">
         <span class="fas fa-user"></span>
-        <a>Add Leaves</a>
+        <a>Request Leaves</a>
         <span class="ml-60 font-bold" id="success" style="color:green; display:none;">
             Employee Leave Added Successfully...!!!
         </span>
@@ -59,7 +59,7 @@
 
             <div class="flex flex-col md:w-1/2 mt-2">
                 <button class="disabled:opacity-50 bg-blue-700 hover:bg-blue-900 font-bold text-white ml-2 py-2 rounded"
-                    type="submit" onclick="return validateForm(this)">Add</button><br>
+                    type="submit" onclick="return validateForm(this)">Request</button><br>
             </div>
         </form>
     </div>
