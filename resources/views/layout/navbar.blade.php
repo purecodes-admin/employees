@@ -69,6 +69,7 @@
 
                     </a>
                     <a href="/employees/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
+                    <a href="/employees/history" class="menu mt-3 md:mx-3   text-gray-200">History</a>
 
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
 
@@ -108,18 +109,6 @@
                             <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
                                     href="/users/edit"><span class="fas fa-user-edit mr-1"></span>Edit
                                     Profile
-                                </a>
-                            </li>
-
-                            <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
-                                    href="/users/expenses"><span class="	fas fa-dollar-sign mr-1"></span>
-                                    Expenses
-                                </a>
-                            </li>
-
-                            <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
-                                    href="/users/distributors-tags"><span class="fas fa-file-invoice mr-1"></span>
-                                    Tags
                                 </a>
                             </li>
 

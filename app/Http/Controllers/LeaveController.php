@@ -59,7 +59,25 @@ class LeaveController extends Controller
         return view('employees.edit_leave',['leave'=>$leave]);
     }
 
+    public function EditLeave(Leave $leave)
+    {
+        
+        return view('admin.edit_leave',['leave'=>$leave]);
+    }
+
+    
     public function update(Request $request)
+    {
+        $leave=Leave::find($request->id);
+    	$leave->days=$request->days;
+    	$leave->leave_from=$request->leave_from;
+    	$leave->leave_to=$request->leave_to;
+
+        $leave->save();
+    }
+
+
+    public function UpdateLeave(Request $request)
     {
         $leave=Leave::find($request->id);
     	$leave->days=$request->days;
@@ -89,6 +107,25 @@ class LeaveController extends Controller
         Session::flash('message', 'Already Approved!'); 
         return redirect('admin/leaves');
     }
+}
+
+
+    public function DestroyLeave(Leave $leave)
+    {
+        try
+        {
+            // throw new \Exception('item not Deleted');
+        $leave->delete();
+        Session::flash('success', 'Record Deleted Successfully!');  
+        return redirect('admin/leaves');
+    }
+    catch(exception $e){
+
+        Session::flash('error', 'Record Not Deleted!'); 
+        return redirect('admin/leaves');
+
+    }
+
 }
 
 

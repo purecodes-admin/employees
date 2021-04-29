@@ -14,10 +14,10 @@
     <div style="width: 88%; margin:auto;">
         <ul class="flex p-3 bg-gray-200 breadcrumbs">
             <li class="mr-2 text-gray-700 hover:text-gray-900">
-                <a href="../" class="hover:underline">Employees</a>
+                <a href="../" class="hover:underline">Employees Leaves</a>
             </li>
             <li class="text-blue-700 hover:text-blue-900">
-                <a>Edit Employee</a>
+                <a>Edit Employees leave</a>
             </li>
         </ul>
     </div>
@@ -25,12 +25,12 @@
 
     <h3 style="width: 88%; margin:auto;" class="p-5 font-semibold text-lg underline text-blue-700 hover:text-blue-900">
         <span class="fas fa-user"></span>
-        <a>Update Employees</a>
+        <a>Update Employees Leave</a>
         <span class="ml-60 font-bold" id="success" style="color:green; display:none;">
-            Employee Updated Successfully...!!!
+            Employee Leave Updated Successfully...!!!
         </span>
         <span class="ml-60 font-bold" id="danger" style="color:red; display:none;">
-            Employee Updation Failed...!!!
+            Employee Leave Updation Failed...!!!
         </span>
     </h3>
 

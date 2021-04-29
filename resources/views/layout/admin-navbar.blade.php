@@ -70,7 +70,7 @@
                     <a href="/admin/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
                     {{-- <a href="/users/logout" class="menu mt-3 md:mx-3   text-gray-200">Logout</a> --}}
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
-                        {{-- @if (Auth::user()->image == '')
+                        @if (Auth::user()->image == '')
 
                             <img src="/images/avatar4.jpg" height="30px" width="30px" class="rounded-3xl inline-block">
 
@@ -78,7 +78,7 @@
                             <img src="{{ asset('images/' . Auth::user()->image) }}" height="30px" width="30px"
                                 class="rounded-3xl inline-block">
 
-                        @endif --}}
+                        @endif
 
 
                         <a class="inline-block">
@@ -108,7 +108,7 @@
                                 </a>
                             </li>
                             <li class="">
-                                <a class="block px-4 py-2 text-sm  hover:bg-gray-400 font-normal" href="/users/logout">
+                                <a class="block px-4 py-2 text-sm  hover:bg-gray-400 font-normal" href="/admin/logout">
                                     Logout
                                 </a>
                             </li>

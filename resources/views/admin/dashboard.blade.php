@@ -22,10 +22,10 @@
         </div>
 
         <span class="ml-60 font-bold" id="success" style="color:green; display:none;">
-            Distributor Record Deleted Successfully...!!!
+            Employee Record Deleted Successfully...!!!
         </span>
         <span class="ml-60 font-bold" id="danger" style="color:red; display:none;">
-            Distributor Record Not Deleted...!!!
+            Employee Record Not Deleted...!!!
         </span>
 
         <table class="table-fixed w-full">
@@ -40,6 +40,9 @@
                     <th
                         class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Email</th>
+                    <th
+                        class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        Leaves</th>
                     <th
                         class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Image</th>
@@ -60,6 +63,9 @@
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->name }}</td>
 
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->email }}</td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->leaves }}</td>
+
 
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 
@@ -101,19 +107,13 @@
 
 
                                 <ul class="leading-7 dropdown-menu absolute hidden bg-gray-200 rounded">
-                                    @if ($record->payment)
-                                        <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                                href="{{ '/users/billings/' . $record->id }}">
-                                                Payment</a>
-                                        </li>
-                                    @endif
                                     <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
-                                            href="{{ '/users/edit-distributor/' . $record->id }}">
+                                            href="{{ '/admin/edit-user/' . $record->id }}">
                                             Edit</a>
                                     </li>
                                     <li class=""><button style="outline:none;"
                                             class="pr-20 hover:bg-white px-2 rounded hover:underline"
-                                            onclick="deleteDistributor({{ $record->id }})">
+                                            onclick="DeleteEmployee({{ $record->id }})">
                                             Delete</button>
                                     </li>
                                 </ul>
@@ -130,13 +130,13 @@
         </table>
 
         <script>
-            function deleteDistributor(id) {
+            function DeleteEmployee(id) {
                 var token = document.getElementById('csrf-token').value;
 
-                if (confirm("Do you Really Want to Delete This Distributor?")) {
+                if (confirm("Do you Really Want to Delete Employee?")) {
                     $.ajax({
                         type: 'get',
-                        url: '/users/delete/' + id,
+                        url: '/admin/delete-employee/' + id,
                         data: {
                             _token: token
                         },

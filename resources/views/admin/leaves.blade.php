@@ -1,4 +1,4 @@
-@extends('layout/master')
+@extends('layout/admin-master')
 @section('title', 'Employees')
 @section('content')
 
@@ -11,12 +11,12 @@
         </h1>
 
         {{-- code for success message --}}
-        @if (Session::has('message'))
+        @if (Session::has('success'))
             <div class="flex justify-between md:w-2/6 text-green-800 px-3 py-3 rounded-md font-bold  text-center mx-auto"
                 style="background-color: #F2FAF7;">
                 <p class="self-center">
                     <span class="fas fa-check-circle" style="color: #32C48D;"></span> Success!
-                    {{ Session::get('message') }}
+                    {{ Session::get('success') }}
                 </p>
                 <strong class="self-center text-2xl cursor-pointer alert-del" style="color: #32C48D;">
                     &times;

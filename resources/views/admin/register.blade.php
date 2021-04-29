@@ -98,6 +98,13 @@
                 </div>
             </div>
 
+            <div class="flex flex-col md:w-1/2">
+                <label for="leaves" class="leading-10 pl-2 ml-2">Leaves:</label>
+                <input type="text" value="{{ old('leaves') }}" name="leaves"
+                    class="ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    placeholder="Leaves">
+            </div>
+
 
             <div class="flex flex-col md:w-1/2 mt-2">
                 <button class="bg-blue-700 hover:bg-blue-900 font-bold text-white ml-2 py-2 rounded"

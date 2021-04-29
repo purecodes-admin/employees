@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('set_as');
             $table->string('contact',11)->nullable();
             $table->string('image')->nullable();
+            $table->integer('leaves')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
