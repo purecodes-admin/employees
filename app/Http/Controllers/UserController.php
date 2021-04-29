@@ -38,8 +38,8 @@ class UserController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8|confirmed',
-                'contact' => 'required|string|max:11',
-                'leaves' => 'required|string|max:11',
+                'leaves' => 'required|string',
+                'salary' => 'required|string',
                 'image'=>'required|file|max:255',
             ]);
             
@@ -48,7 +48,8 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->password=Hash::make($request->password);
             $user->set_as= 0;
-            $user->contact=$request->contact;
+            $user->salary=$request->salary;
+            $user->joining_date=$request->joining;
             $user->leaves=$request->leaves;
 
             if($request->hasfile('image')){
@@ -114,12 +115,16 @@ class UserController extends Controller
                 $request->validate([
                     'name' => 'required|string|max:255',
                     'email' => 'required|string|email|max:255',
-                    'contact' => 'required|string|max:11',
+                    'leaves' => 'required|string',
+                    'salary' => 'required|string',
                 ]);
                 $user=User::find($request->id);
                 $user->name = $request->name;
                 $user->email = $request->email;
-                $user->contact = $request->contact;
+                $user->salary=$request->salary;
+                $user->leaves=$request->leaves;
+
+                
                 $user->save();
             }
 

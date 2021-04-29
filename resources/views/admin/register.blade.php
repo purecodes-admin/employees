@@ -80,14 +80,13 @@
 
             <div class="flex">
                 <div class="flex flex-col md:w-1/2">
-                    <label for="contact" class="leading-10 pl-2 ml-2">Contact No:</label>
-                    <input type="text" value="{{ old('contact') }}" name="contact"
-                        class="ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Contact" required>
-                    @error('contact')
+                    <label for="salary" class="leading-10 pl-2 ml-2">Salary:</label>
+                    <input type="text" name="salary" value="{{ old('salary') }}"
+                        class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 "
+                        placeholder="Salary">
+                    @error('salary')
                         <span class="text-red-600 ml-4 font-bold text-sm">** {{ $message }}</span>
                     @enderror
-
                 </div>
                 <div class="flex flex-col md:w-1/2">
                     <label for="image" class="leading-10 pl-2 ml-4">Image:</label>
@@ -98,11 +97,27 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:w-1/2">
-                <label for="leaves" class="leading-10 pl-2 ml-2">Leaves:</label>
-                <input type="text" value="{{ old('leaves') }}" name="leaves"
-                    class="ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                    placeholder="Leaves">
+            <div class="flex">
+
+                <div class="flex flex-col md:w-1/2">
+                    <label for="leaves" class="leading-10 pl-2 ml-2">Leaves:</label>
+                    <input type="text" value="{{ old('leaves') }}" name="leaves"
+                        class="ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Leaves">
+                    @error('leaves')
+                        <span class="text-red-600 ml-4 font-bold text-sm">** {{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="flex flex-col md:w-1/2">
+                    <label for="joining" class="leading-10 pl-2 ml-4">Joining Date</label>
+                    <input type="date" value="{{ old('joining') }}" name="joining"
+                        class=" ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Joining Date" required>
+                    @error('joining_date')
+                        <span class="text-red-600 ml-4 font-bold text-sm">** {{ $message }}</span>
+                    @enderror
+                </div>
             </div>
 
 

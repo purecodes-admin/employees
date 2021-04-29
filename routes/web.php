@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeaveController;
-use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,12 +35,6 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
 Route::group(['prefix' => 'admin'], function() 
 { 
-    Route::get("joinings",[EmployeeController::class,'index']);
-    Route::get("add",[EmployeeController::class,'create']);
-    Route::post("add",[EmployeeController::class,'store']);
-    Route::get("edit/{employee}",[EmployeeController::class,'edit']);
-    Route::post("update",[EmployeeController::class,'update']);
-    Route::get("delete/{employee}",[EmployeeController::class,'destroy']);
     Route::get("leaves",[LeaveController::class,'index']);
     Route::get("register",[UserController::class,'create']);
     Route::post("register",[UserController::class,'store']);

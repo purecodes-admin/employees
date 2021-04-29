@@ -42,13 +42,16 @@
                         Email</th>
                     <th
                         class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        Salary</th>
+                    <th
+                        class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Leaves</th>
                     <th
                         class="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Image</th>
                     <th
                         class=" hidden md:table-cell px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                        Date & Time</th>
+                        Joining Date</th>
                     <th
                         class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Actions
@@ -62,7 +65,10 @@
 
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->name }}</td>
 
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->email }}</td>
+                        <td style="overflow-wrap:anywhere;" class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {{ $record->email }}</td>
+                        <td style="overflow-wrap:anywhere;" class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {{ $record->salary }}</td>
 
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $record->leaves }}</td>
 
@@ -81,7 +87,7 @@
                             @endif
                         </td>
 
-                        <td title="{{ $record->created_at }}" style="overflow-wrap:anywhere;"
+                        <td title="{{ $record->joining_date }}" style="overflow-wrap:anywhere;"
                             class="hidden md:table-cell  px-5 py-5 border-b border-gray-200 bg-white text-sm">
                             {{ $record->created_at->diffForHumans() }}
                         </td>
