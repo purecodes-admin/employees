@@ -96,18 +96,18 @@ class LeaveController extends Controller
 
     public function approve(Leave $leave ,Request $request)
     {
-    	if(($leave->status == 'pending')){
-            $leave->status='Approved';
-            $leave->has_approved = now();
-            $leave->save();
-            Session::flash('approve', ' Leave Approved Successfully!'); 
-            return redirect('admin/leaves');
+                if(($leave->status == 'pending')){
+                    $leave->status='Approved';
+                    $leave->has_approved = now();
+                    $leave->save();
+                    Session::flash('approve', 'Leave Approved Successfully!'); 
+                    return redirect('admin/leaves');
+            }
+            else{
+                Session::flash('message', 'Leave Already Approved!'); 
+                return redirect('admin/leaves');
+            }
     }
-    else{
-        Session::flash('message', 'Already Approved!'); 
-        return redirect('admin/leaves');
-    }
-}
 
 
     public function DestroyLeave(Leave $leave)

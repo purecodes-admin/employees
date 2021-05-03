@@ -43,7 +43,7 @@
             <p class="text-center text-red-600 font-bold">{{ Session::get('message') }}</p>
         @endif
         @if (Session::has('approve'))
-            <p class="text-center text-green-700 font-bold">{{ Session::get('payment') }}</p>
+            <p class="text-center text-green-700 font-bold">{{ Session::get('approve') }}</p>
         @endif
 
 

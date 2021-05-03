@@ -21,74 +21,63 @@
         <form enctype="multipart/form-data" name="myForm" id="addForm">
             @csrf
             <div class="flex">
-                <div class="flex flex-col md:w-1/2">
-                    <label for="salary" class="leading-10 pl-2 ml-2">Salary:</label>
-                    <input type="text" name="salary" value="{{ old('salary') }}"
-                        class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 "
-                        placeholder="Salary">
-
-                    <span class="ml-4 font-bold error" id="salarymsg" style="color:Red;display:none">Salary must be
-                        filled
-                        out!</span>
-
-                    <span class="ml-4 error font-bold" id="salarymsg1" style="color:Red;display:none">Salary
-                        must be filled
-                        out in digits only!</span>
-                </div>
 
 
-                <div class="flex flex-col md:w-1/2">
-                    <label for="joining" class="leading-10 pl-2 ml-4">Joining Date</label>
-                    <input type="date" value="{{ old('joining') }}" name="joining"
-                        class=" ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Joining Date">
-                    <span class="ml-4 font-bold error" id="joiningmsg" style="color:Red;display:none">Must Select Joining
-                        Month!</span>
-                </div>
+                <span class="ml-4 font-bold error" id="salarymsg" style="color:Red;display:none">Salary must be
+                    filled
+                    out!</span>
+
+                <span class="ml-4 error font-bold" id="salarymsg1" style="color:Red;display:none">Salary
+                    must be filled
+                    out in digits only!</span>
             </div>
 
 
-            <div class="flex">
-                <div class="flex flex-col md:w-1/2">
-                    <label for="leaves" class="leading-10 pl-2 ml-2">Leaves</label>
-                    <input type="text" value="{{ old('leaves') }}" name="leaves"
-                        class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Leaves">
 
-                    <span class="ml-4 font-bold error" id="leavesmsg" style="color:Red;display:none">Leaves must be
-                        filled
-                        out!</span>
-
-                    <span class="ml-4 error font-bold" id="leavesmsg1" style="color:Red;display:none">Leaves
-                        must be filled
-                        out in digits only!</span>
-                </div>
-                <div class="flex flex-col md:w-1/2">
-                    <label for="remaining_leaves" class="leading-10 pl-2 ml-4">Remaining Leaves</label>
-                    <input type="text" value="{{ old('remaining_leaves') }}" name="remaining_leaves"
-                        class="ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Remaining Leaves">
-
-                    <span class="ml-4 font-bold error" id="remaining_leavesmsg" style="color:Red;display:none">Remaining
-                        Leaves must
-                        be
-                        filled
-                        out!</span>
-
-                    <span class="ml-4 error font-bold" id="remaining_leavesmsg1" style="color:Red;display:none">Remaining
-                        Leaves
-                        must be filled
-                        out in digits only!</span>
-
-                </div>
-            </div>
+    </div>
 
 
-            <div class="flex flex-col md:w-1/2 mt-2">
-                <button class="disabled:opacity-50 bg-blue-700 hover:bg-blue-900 font-bold text-white ml-2 py-2 rounded"
-                    type="submit" onclick="return validateForm(this)">Add</button><br>
-            </div>
-        </form>
+    <div class="flex">
+        <div class="flex flex-col md:w-1/2">
+            <label for="leaves" class="leading-10 pl-2 ml-2">Leaves</label>
+            <input type="text" value="{{ old('leaves') }}" name="leaves"
+                class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                placeholder="Leaves">
+
+            <span class="ml-4 font-bold error" id="leavesmsg" style="color:Red;display:none">Leaves must be
+                filled
+                out!</span>
+
+            <span class="ml-4 error font-bold" id="leavesmsg1" style="color:Red;display:none">Leaves
+                must be filled
+                out in digits only!</span>
+        </div>
+        <div class="flex flex-col md:w-1/2">
+            <label for="remaining_leaves" class="leading-10 pl-2 ml-4">Remaining Leaves</label>
+            <input type="text" value="{{ old('remaining_leaves') }}" name="remaining_leaves"
+                class="ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                placeholder="Remaining Leaves">
+
+            <span class="ml-4 font-bold error" id="remaining_leavesmsg" style="color:Red;display:none">Remaining
+                Leaves must
+                be
+                filled
+                out!</span>
+
+            <span class="ml-4 error font-bold" id="remaining_leavesmsg1" style="color:Red;display:none">Remaining
+                Leaves
+                must be filled
+                out in digits only!</span>
+
+        </div>
+    </div>
+
+
+    <div class="flex flex-col md:w-1/2 mt-2">
+        <button class="disabled:opacity-50 bg-blue-700 hover:bg-blue-900 font-bold text-white ml-2 py-2 rounded"
+            type="submit" onclick="return validateForm(this)">Add</button><br>
+    </div>
+    </form>
     </div>
 
 
