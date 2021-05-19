@@ -41,32 +41,29 @@
                 <img src="{{ asset('images/' . $user->image) }}" alt="Distributor Picture" height="130px" width="130px"
                     class=" rounded-xl">
             </div>
-            <div class="flex">
-                <div class="flex flex-col md:w-1/2">
-                    <label for="name" class="leading-10 pl-2">Name:</label>
-                    <input type="text" name="name" value="{{ old('name', $user->name) }}"
-                        class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 "
-                        placeholder="Name">
-                    <span class="ml-4 error font-bold" id="namemsg" style="color:Red;display:none">Name must be filled
-                        out!</span>
+            <div class="flex flex-col md:w-1/2">
+                <label for="name" class="leading-10 pl-2 ml-2">Name:</label>
+                <input type="text" name="name" value="{{ old('name', $user->name) }}"
+                    class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 "
+                    placeholder="Name">
+                <span class="ml-4 error font-bold" id="namemsg" style="color:Red;display:none">Name must be filled
+                    out!</span>
 
-                </div>
-
-
-                <div class="flex flex-col md:w-1/2">
-                    <label for="email" class="leading-10 pl-2 ml-4">Email:</label>
-                    <input type="email" value="{{ old('email', $user->email) }}" name="email"
-                        class=" ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Email">
-                    <span class="ml-4 error font-bold" id="emailmsg" style="color:Red;display:none">Email must be filled
-                        out!</span>
-
-
-                </div>
             </div>
 
-            <div class="flex">
-                <div class="flex flex-col md:w-1/2">
+
+            <div class="flex flex-col md:w-1/2">
+                <label for="email" class="leading-10 pl-2 ml-2">Email:</label>
+                <input type="email" value="{{ old('email', $user->email) }}" name="email"
+                    class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    placeholder="Email">
+                <span class="ml-4 error font-bold" id="emailmsg" style="color:Red;display:none">Email must be filled
+                    out!</span>
+
+
+            </div>
+
+            {{-- <div class="flex flex-col md:w-1/2">
                     <label for="salary" class="leading-10 pl-2">Salary:</label>
                     <input type="text" value="{{ old('salary', $user->salary) }}" name="salary"
                         class=" ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
@@ -78,20 +75,19 @@
                         in
                         digits!</span>
 
-                </div>
+                </div> --}}
 
-                <div class="flex flex-col md:w-1/2">
-                    <label for="leaves" class="leading-10 pl-2 ml-4">Leaves:</label>
-                    <input type="text" value="{{ old('leaves', $user->leaves) }}" name="leaves"
-                        class="ml-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="Leaves">
+            <div class="flex flex-col md:w-1/2">
+                <label for="leaves" class="leading-10 pl-2 ml-2">Leaves:</label>
+                <input type="text" value="{{ old('leaves', $user->leaves) }}" name="leaves"
+                    class="ml-2 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    placeholder="Leaves">
 
-                    <span class="ml-8 error font-bold" id="leavesmsg" style="color:Red;display:none">Leaves must be
-                        filled
-                        out!</span>
-                    <span class="ml-8 error font-bold" id="leavesmsg1" style="color:Red;display:none">Leaves must be
-                        in digits!</span>
-                </div>
+                <span class="ml-8 error font-bold" id="leavesmsg" style="color:Red;display:none">Leaves must be
+                    filled
+                    out!</span>
+                <span class="ml-8 error font-bold" id="leavesmsg1" style="color:Red;display:none">Leaves must be
+                    in digits!</span>
             </div>
 
             <div class="flex flex-col md:w-1/2 mt-2">
@@ -123,16 +119,16 @@
                 document.getElementById("emailmsg").style.display = ""
                 return false;
             }
-            var salary = document.forms["myForm"]["salary"].value;
-            if (salary == "") {
-                document.getElementById("salarymsg").style.display = ""
-                return false;
-            }
-            var salary = document.forms["myForm"]["salary"].value;
-            if (isNaN(salary)) {
-                document.getElementById("salarymsg1").style.display = ""
-                return false;
-            }
+            // var salary = document.forms["myForm"]["salary"].value;
+            // if (salary == "") {
+            //     document.getElementById("salarymsg").style.display = ""
+            //     return false;
+            // }
+            // var salary = document.forms["myForm"]["salary"].value;
+            // if (isNaN(salary)) {
+            //     document.getElementById("salarymsg1").style.display = ""
+            //     return false;
+            // }
 
             var leaves = document.forms["myForm"]["leaves"].value;
             if (leaves == "") {
@@ -152,7 +148,7 @@
                 data: {
                     name: name,
                     email: email,
-                    salary: salary,
+                    // salary: salary,
                     leaves: leaves,
                     _token: token,
                     id: id

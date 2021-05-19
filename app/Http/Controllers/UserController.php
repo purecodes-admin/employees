@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Increment;
 use Illuminate\Http\Request;
 use Illuminate\support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -116,24 +117,65 @@ class UserController extends Controller
                     'name' => 'required|string|max:255',
                     'email' => 'required|string|email|max:255',
                     'leaves' => 'required|string',
-                    'salary' => 'required|string',
+                    // 'salary' => 'required|string',
                 ]);
                 $user=User::find($request->id);
                 $user->name = $request->name;
                 $user->email = $request->email;
-                $user->salary=$request->salary;
+                // $user->salary=$request->salary;
                 $user->leaves=$request->leaves;
 
                 
                 $user->save();
             }
 
-            public function history()
+            public function home()
             {
         
                 $users = User::where('id',auth()->user()->id)->get();
                     
                 return view('employees.history', ['data' => $users]);
+            }
+
+            
+
+            public function Increment(User $user)
+            {
+                return view('admin.increment',['user'=>$user]);
+            
+            }
+
+
+            public function UpdateSalary(Request $request)
+            {
+                
+                $request->validate([
+                  
+                    'salary' => 'required|string',
+                ]);
+                $increment= new Increment;
+                $increment->employee_id=$request->id;
+                $increment->salary=$request->salary;
+                $increment->save();
+
+                DB::table('users')->where('id',$increment->employee_id)
+                ->update(['salary'=> $increment->salary])
+                ;
+            }
+
+
+            public function BannUser(User $user,Request $request)
+            {
+                        if(($user->status == '')){
+                            $user->status='Banned';
+                            $user->save();
+                            Session::flash('banned', 'User Banned Successfully!'); 
+                            return redirect('admin');
+                    }
+                    else{
+                        Session::flash('message', 'User Already Banned!'); 
+                        return redirect('admin');
+                    }
             }
 
 }

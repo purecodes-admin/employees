@@ -7,6 +7,14 @@
 
         <h1 class="text-4xl text-gray-700 font-bold m-4 pt-4">Employees List</h1>
 
+        {{-- code for flash messages --}}
+        @if (Session::has('message'))
+            <p class="text-center text-red-600 font-bold">{{ Session::get('message') }}</p>
+        @endif
+        @if (Session::has('banned'))
+            <p class="text-center text-green-700 font-bold">{{ Session::get('banned') }}</p>
+        @endif
+
         <div class="flex md:justify-end justify-start">
 
             <a href="/admin/register">
@@ -114,6 +122,17 @@
 
                                 <ul class="leading-7 dropdown-menu absolute hidden bg-gray-200 rounded">
                                     <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
+                                            href="{{ '/admin/increment/' . $record->id }}">
+                                            Increment</a>
+                                    </li>
+                                    <li class="">
+                                        @if (!$record->status)
+                                            <a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
+                                                href="{{ '/admin/bann/' . $record->id }}">
+                                                Bann</a>
+                                        @endif
+                                    </li>
+                                    <li class=""><a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
                                             href="{{ '/admin/edit-user/' . $record->id }}">
                                             Edit</a>
                                     </li>
@@ -133,7 +152,7 @@
                     <td colspan="7" class="text-center py-4">No records found.</td>
                 </tr>
             @endforelse
-        </table>
+        </table><br><br><br><br>
 
         <script>
             function DeleteEmployee(id) {

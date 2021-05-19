@@ -46,6 +46,13 @@
             <p class="text-center text-green-700 font-bold">{{ Session::get('approve') }}</p>
         @endif
 
+        @if (Session::has('message1'))
+            <p class="text-center text-red-600 font-bold">{{ Session::get('message1') }}</p>
+        @endif
+        @if (Session::has('reject'))
+            <p class="text-center text-green-700 font-bold">{{ Session::get('reject') }}</p>
+        @endif
+
 
         <div class="flex justify-start md:justify-end">
             <a href="/admin/leave">
@@ -140,6 +147,13 @@
                                             <a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"
                                                 href="{{ '/admin/approve/' . $employee['id'] }}">
                                                 Approve</a>
+                                        @endif
+                                    </li>
+                                    <li class="">
+                                        @if ($employee->status === 'pending')
+                                            <a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"
+                                                href="{{ '/admin/reject/' . $employee['id'] }}">
+                                                Reject</a>
                                         @endif
                                     </li>
                                     <li class=""><a class="-ml-1 pr-20 hover:bg-white block px-2 rounded hover:underline"

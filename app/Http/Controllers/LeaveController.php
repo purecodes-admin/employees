@@ -32,7 +32,7 @@ class LeaveController extends Controller
     	$leave->leave_to=$request->leave_to;
     	$leave->status='pending';
 
-        $leave->save();
+        $leave->save(); 
     }
 
     public function destroy(Leave $leave)
@@ -100,11 +100,32 @@ class LeaveController extends Controller
                     $leave->status='Approved';
                     $leave->has_approved = now();
                     $leave->save();
+
+                    DB::table('users')->where('id',$leave->employee_id)
+                    ->decrement('leaves',$leave->days)
+                    ;
+
                     Session::flash('approve', 'Leave Approved Successfully!'); 
                     return redirect('admin/leaves');
             }
             else{
                 Session::flash('message', 'Leave Already Approved!'); 
+                return redirect('admin/leaves');
+            }
+    }
+
+
+    public function reject(Leave $leave ,Request $request)
+    {
+                if(($leave->status == 'pending')){
+                    $leave->status='Rejected';
+                    $leave->has_approved = now();
+                    $leave->save();
+                    Session::flash('reject', 'Leave Rejected Successfully!'); 
+                    return redirect('admin/leaves');
+            }
+            else{
+                Session::flash('message1', 'Leave Already Rejected!'); 
                 return redirect('admin/leaves');
             }
     }

@@ -65,11 +65,12 @@
 
             <div class="hidden md:block mobile-menu mr-16">
                 <div :class="open ? 'block' : 'hidden'" class="flex flex-col text-left md:block md:text-right md:mt-0">
-                    <a href="/dashboard" class=" menu mt-3 md:mx-3  text-gray-200">Home
+                    {{-- <a href="/dashboard" class=" menu mt-3 md:mx-3  text-gray-200">Home
 
-                    </a>
+                    </a> --}}
+                    <a href="/employees" class="menu mt-3 md:mx-3   text-gray-200">Home</a>
                     <a href="/employees/leaves" class="menu mt-3 md:mx-3   text-gray-200">Leaves</a>
-                    <a href="/employees/history" class="menu mt-3 md:mx-3   text-gray-200">History</a>
+
 
                     <div class=" dropdown relativemt-3 md:mx-3 hover:text-red-500 font-bold inline-block">
 

@@ -31,10 +31,11 @@ class AuthenticatedSessionController extends Controller
               // $request->authenticate();
               $credentials = $request->only('email', 'password');   
               $credentials['set_as'] = 0;
+              $credentials['status'] = '';
               if (Auth::attempt($credentials)) {
                   $request->session()->regenerate();
       
-              return redirect('dashboard');
+              return redirect('employees');
               }
       
               return back()->withErrors([
