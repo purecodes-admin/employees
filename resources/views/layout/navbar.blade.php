@@ -96,17 +96,18 @@
 
 
                         <ul class="dropdown-menu absolute hidden text-gray-200 bg-blue-700 rounded-b-xl"><br>
-
-                            {{-- <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
-                                    href="/users/set-password"> <span class="fas fa-exchange-alt"></span> Change
-                                    Password</a></li>
                             <li class="">
-                                <a class="block px-4 py-2 text-sm  hover:bg-gray-400 font-normal" href="/users/image">
+                                <a class="block px-4 py-2 text-sm  hover:bg-gray-400 font-normal" href="/admin/image">
                                     <span class="	fas fa-cloud-upload-alt"></span>
                                     Upload
                                     Profile
                                 </a>
                             </li>
+
+                            {{-- <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
+                                    href="/users/set-password"> <span class="fas fa-exchange-alt"></span> Change
+                                    Password</a></li>
+                        
                             <li class=""><a class="block px-4 py-2 text-sm hover:bg-gray-400 font-normal"
                                     href="/users/edit"><span class="fas fa-user-edit mr-1"></span>Edit
                                     Profile

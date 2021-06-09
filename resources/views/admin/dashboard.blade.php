@@ -126,7 +126,7 @@
                                             Increment</a>
                                     </li>
                                     <li class="">
-                                        @if (!$record->status)
+                                        @if ($record->status == 'Unbanned')
                                             <a class="pr-20 hover:bg-white block px-2 rounded hover:underline"
                                                 href="{{ '/admin/bann/' . $record->id }}">
                                                 Bann</a>

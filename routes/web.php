@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin'], function()
     // Route::post("Update-Salary",[IncrementController::class,'UpdateSalary']);
     Route::get("bann/{user}",[UserController::class,'BannUser']);
     Route::get("increments",[IncrementController::class,'index']);
+    Route::get("image",[UserController::class,'UpdateImage']);
+    Route::post("upload",[UserController::class,'UploadImage']);
 
 
 }); 

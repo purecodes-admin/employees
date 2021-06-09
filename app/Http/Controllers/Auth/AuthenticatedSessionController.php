@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
               // $request->authenticate();
               $credentials = $request->only('email', 'password');   
               $credentials['set_as'] = 0;
-             if( !$credentials['status'] = 'Banned'){}
+             if( $credentials['status'] = 'Unbanned'){}
               if (Auth::attempt($credentials)) {
                   $request->session()->regenerate();
       

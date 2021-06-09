@@ -49,6 +49,7 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->password=Hash::make($request->password);
             $user->set_as= 0;
+            $user->status= 'Unbanned';
             $user->salary=$request->salary;
             $user->joining_date=$request->joining;
             $user->leaves=$request->leaves;
@@ -166,7 +167,7 @@ class UserController extends Controller
 
             public function BannUser(User $user,Request $request)
             {
-                        if(($user->status == '')){
+                        if(($user->status == 'Unbanned')){
                             $user->status='Banned';
                             $user->save();
                             Session::flash('banned', 'User Banned Successfully!'); 
@@ -177,5 +178,36 @@ class UserController extends Controller
                         return redirect('admin');
                     }
             }
+
+                    // upload image code
+
+        public function UpdateImage(){
+
+            return view('admin.upload-image');
+        }
+
+        public function UploadImage(Request $request)
+        {
+            
+            $request->validate([
+                'image'=>'required|file|max:255',
+            ]);
+            $user=User::where('id',Auth::user()->id)->first();
+            if($request->hasfile('image')){
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension(); 
+                // getting image extention
+                $filename = time().'.'. $extension;
+                $file->move('images/', $filename);
+                $user->image = $filename;
+            }
+            else{
+                    // return $request;
+                    $user->image='';
+                }
+        $user->save();
+        Session::flash('profile', 'Profile Uploaded Successfully!'); 
+        return redirect('admin/image');
+        }
 
 }
